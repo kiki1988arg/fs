@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,20 @@ import { ChatModule } from './chat/chat.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { PhrasesModule } from './phrases/phrases.module';
 
+import { environment } from '../environments/environment';
+export const firebaseConfig = environment.firebaseConfig;
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppInterceptor } from './app-interceptor';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeEs, 'es');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +34,8 @@ import { PhrasesModule } from './phrases/phrases.module';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     MaterialModule,
     MessagesModule,
@@ -28,7 +44,10 @@ import { PhrasesModule } from './phrases/phrases.module';
     GalleryModule,
     PhrasesModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
+    { provide: LOCALE_ID, useValue: 'es' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

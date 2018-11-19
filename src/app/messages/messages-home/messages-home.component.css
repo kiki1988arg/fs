@@ -1,0 +1,11 @@
+mat-card {
+    width: 70%;
+    height: 20%;
+    margin: 25px auto 0px auto;
+}
+
+.fixedButton{
+    position: fixed;
+    bottom: 90px;
+    right: 50px;
+  }
