@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MessagesRoutingModule } from './messages-routing.module';
 import { MessagesHomeComponent } from './messages-home/messages-home.component';
-import { MaterialModule } from '../material.module';
+import { MaterialModule } from '../shared/material.module';
 import { MessagesCreateComponent } from './messages-create/messages-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirestoreDatePipe } from '../shared/pipes/firestore-date.pipe';

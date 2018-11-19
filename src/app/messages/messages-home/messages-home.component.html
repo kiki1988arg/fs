@@ -4,8 +4,8 @@
     <div mat-card-avatar>
       <button mat-mini-fab class="unclickeable" color="accent">?</button>
     </div>
-    <mat-card-title>{{ item.To }}</mat-card-title>
-    <mat-card-subtitle> <p><b>Para: {{ item.From }}</b>  {{ item.Time | firestoreDate }}</p></mat-card-subtitle>
+    <mat-card-title>Para: {{ item.To }}</mat-card-title>
+    <mat-card-subtitle> <p><b>De: {{ item.From }}</b>  {{ item.Time | firestoreDate }}</p></mat-card-subtitle>
   </mat-card-header>  
   <mat-card-content>  
    

@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
     // { path: '/phrases', title: 'Frases' },
     { path: '/messages', title: 'Mensajes' },
     // { path: '/gallery', title: 'Galería' },
-    // { path: '/chat', title: 'Chat' }
+    { path: '/chat', title: 'Chat' }
   ];
   activeLink = this.links[0];
 
