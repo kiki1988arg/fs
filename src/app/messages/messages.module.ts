@@ -7,6 +7,7 @@ import { MaterialModule } from '../material.module';
 import { MessagesCreateComponent } from './messages-create/messages-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirestoreDatePipe } from '../shared/pipes/firestore-date.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,9 +15,10 @@ import { FirestoreDatePipe } from '../shared/pipes/firestore-date.pipe';
     CommonModule,
     MessagesRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
-  declarations: [MessagesHomeComponent, MessagesCreateComponent, FirestoreDatePipe],
+  declarations: [MessagesHomeComponent, MessagesCreateComponent],
   entryComponents : [
     MessagesCreateComponent
   ]
