@@ -1,0 +1,24 @@
+mat-form-field {
+    width:100%;
+}
+kendo-multiselect {
+    width:100%;
+}
+mat-card {
+    width: 390px;
+    margin: 27px auto -15px auto;
+}
+
+mat-card-content p {
+    max-height: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;    
+    word-break: break-all;
+}
+
+#create {
+    float: right;
+    margin-top: 20px;
+
+}

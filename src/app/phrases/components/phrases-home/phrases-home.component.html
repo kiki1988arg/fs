@@ -1,0 +1,36 @@
+<div fxLayout='row wrap' fxLayout.xs='column'>
+
+<ng-container *ngFor="let item of items | async">
+
+    <div fxFlex="33">    
+    
+    <mat-card class="example-card">
+        <mat-card-header>  
+            <mat-card-subtitle  >
+            <ng-container *ngFor="let cat of item.Categories">
+                <button mat-stroked-button color="accent">{{cat}}</button>                
+              </ng-container>  
+              </mat-card-subtitle>       
+        </mat-card-header>        
+        <mat-card-content class="center">    
+          <p routerLink="./detail" mat-line>
+            "{{item.Message}}"
+          </p>          
+        </mat-card-content>
+        <mat-card-actions>
+            <h3 mat-line class="right">{{item.Author}}</h3>
+        </mat-card-actions>
+        <mat-card-footer>         
+            <mat-icon style="color:green">thumb_up_alt</mat-icon>       
+            <mat-icon color="warn">thumb_down_alt</mat-icon>         
+            <mat-icon svgIcon="facebook" class="social"></mat-icon>
+            <mat-icon svgIcon="twitter" class="social"></mat-icon>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+</ng-container>
+</div>
+
+<button routerLink="./create" mat-fab color="primary" class="fixedButton">
+  <mat-icon>add</mat-icon>
+</button>

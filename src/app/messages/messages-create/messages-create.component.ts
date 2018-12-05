@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularfireService } from 'src/app/shared/services/angularfire.service';
 import { MatDialogRef } from '@angular/material';
 
@@ -38,7 +37,4 @@ export class MessagesCreateComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  get From() { return this.messageCreateForm.get('name'); }
-
-  get To() { return this.messageCreateForm.get('power'); }
 }

@@ -1,0 +1,39 @@
+mat-card {
+    width: 390px;
+    margin: 27px auto -15px auto;
+}
+mat-card-content p {
+    max-height: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;    
+    word-break: break-all;
+}
+
+mat-card-header{
+    max-height: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+mat-card-header .mat-card-header-text {        
+    word-break: break-all;
+}
+
+
+.fixedButton{
+    position: fixed;
+    bottom: 90px;
+    right: 50px;
+  }
+  mat-icon.social {  
+    height: 25px;
+    width: 34px;
+}
+mat-list-item {
+    margin: 30px;
+    height: auto;
+}
+
+:host .nowhitespace {
+    white-space: normal;
+}

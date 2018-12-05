@@ -1,13 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;     background-color: beige;}
+body { margin: 0 auto; font-family: 'Nunito', sans-serif; }
 
+
+
+.left {
+  float:left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  float: right;
+  text-align: right;
+}
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
 //Float Button
 
 // CLickeabilidad
 .unclickeable {
   cursor: default !important;
 }
+@import "~@progress/kendo-theme-material/scss/dropdownlist";
 
 
 
@@ -59,7 +76,7 @@ $mat-fs: (
 // hue. Available color palettes: https://material.io/design/color/
 
 $fs-app-primary: mat-palette($mat-fs);
-$fs-app-accent:  mat-palette($mat-blue, A200, A100, A400);
+$fs-app-accent:  mat-palette($mat-pink, A400, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $fs-app-warn:    mat-palette($mat-red);
@@ -71,3 +88,13 @@ $fs-app-theme: mat-light-theme($fs-app-primary, $fs-app-accent, $fs-app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($fs-app-theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: "'Nunito', sans-serif",
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include angular-material-typography($custom-typography);

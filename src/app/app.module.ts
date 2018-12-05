@@ -17,11 +17,14 @@ export const firebaseConfig = environment.firebaseConfig;
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppInterceptor } from './app-interceptor';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
+
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeEs, 'es');
@@ -42,7 +45,9 @@ registerLocaleData(localeEs, 'es');
     AppRoutingModule,
     ChatModule,
     GalleryModule,
-    PhrasesModule
+    PhrasesModule,
+    HttpClientModule,
+    ButtonsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },

@@ -1,6 +1,6 @@
 .example-card {
     width: 283px;    
-    margin-top: 125px;
+    margin: 125px auto;
   }
   
   .example-header-image {

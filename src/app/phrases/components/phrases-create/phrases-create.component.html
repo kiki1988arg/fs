@@ -1,0 +1,47 @@
+<div fxLayout='row' fxLayout.xs='column' >
+  <div fxFlex>
+    <h1>Agregar una frase</h1>
+    <form [formGroup]='phraseCreateForm' (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput #Author type="text" placeholder="Autor o pseudónimo(*)" formControlName="Author">
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>
+       <mat-form-field>      
+        <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=8 matInput formControlName="Message"
+          placeholder="Contenido" #phrase maxlength="256"></textarea>
+        <mat-hint align="end">{{phrase.value.length}} / 256</mat-hint>
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>      
+      <kendo-multiselect #categoriess [data]="categories" [value]="selectedCategories" (valueChange)="onSizeChange($event)"
+        formControlName="Categories" placeholder="categorias(*)">
+      </kendo-multiselect>
+      <mat-divider></mat-divider>      
+      <button  id="create" mat-raised-button color="accent" type="submit" [disabled]="!phraseCreateForm.valid">Crear frase</button>      
+    </form>
+  </div>
+  <div fxFlex>
+      <mat-card class="middle">
+          <mat-card-header>
+            <mat-card-subtitle> 
+              categories
+            </mat-card-subtitle>
+          </mat-card-header>          
+          <mat-card-content class=" center">
+            <p mat-line>
+              "{{phrase.value}}"  
+            </p>          
+          </mat-card-content>
+          <mat-card-actions>
+              <h3 mat-line class="right">{{Author.value}}</h3>
+          </mat-card-actions>
+          <mat-card-footer>         
+              <mat-icon style="color:green">thumb_up_alt</mat-icon>
+              +153
+              <mat-icon color="warn">thumb_down_alt</mat-icon>
+              -50
+              <mat-icon svgIcon="facebook" class="social"></mat-icon>
+              <mat-icon svgIcon="twitter" class="social"></mat-icon>
+          </mat-card-footer>
+        </mat-card>
+  </div>
+</div>
